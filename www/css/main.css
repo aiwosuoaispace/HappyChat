@@ -1,0 +1,42 @@
+.main_container {
+	width: 500px;
+	height: auto;
+	padding: 5px;
+	margin: 0 auto;
+	background-color: #ffffcc;
+}
+#history_msg_content {
+    height: 500px;
+    background-color: white;
+    overflow: auto;
+    padding: 4px;
+}
+.controls {
+    height: auto;
+    margin: 10px 0px;
+    background-color: #dddddd;
+    position: relative;
+    
+}
+#message_input {
+    width: 490px;
+    max-width: 490px;
+    height: 100px;
+    max-height: 100px;
+}
+#history_msg_content img {
+    max-width: 99%;
+}
+#emoji_content {
+    display: none;
+    width: 400px;
+    height: auto;
+    bottom: 140px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+
+}
+#emoji_content img{
+	cursor: pointer;
+}
