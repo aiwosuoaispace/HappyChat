@@ -1,0 +1,88 @@
+@bg_color: #E5EECC;
+@base-color: #112222;
+
+body {
+    background-color: @bg_color;
+}
+.border_base_rounded-corners (@radius: 2px, @color:#19a15f) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+    border: 1px solid @color;
+
+}
+.main_header {
+    h1 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    span {
+        color: brown;
+        cursor: pointer;
+        &:hover {
+            color: (@base-color * 3);
+            font-size: floor(18.6px);
+        }
+    }
+}
+.main_container {
+    width: 600px;
+    height: auto;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: #ffffcc;
+}
+#history_msg_content {
+    height: 500px;
+    background-color: white;
+    overflow: auto;
+    padding: 4px;
+    margin-top: 5px;
+    .border_base_rounded-corners(1px,orange);
+}
+.controls {
+    height: auto;
+    margin: 10px 0;
+    background-color: #dddddd;
+    position: relative;
+    .border_base_rounded-corners;
+
+}
+#message_input {
+    width: 590px;
+    max-width: 590px;
+    height: 100px;
+    max-height: 100px;
+}
+#history_msg_content img {
+    max-width: 99%;
+}
+#emoji_content {
+    display: none;
+    width: 400px;
+    height: auto;
+    bottom: 140px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+
+}
+#emoji_content img {
+    cursor: pointer;
+}
+#video {
+    position: fixed;
+    width: percentage(0.5);
+    height: percentage(0.5);
+    z-index: 10;
+    .border_base_rounded-corners(1px,black);
+    background-color: white;
+    left: percentage(0.5);
+    top: percentage(0.5);
+    -webkit-transform: translate(-50%,-80%);
+    -ms-transform: translate(-50%,-80%);
+    transform: translate(-50%,-80%);
+    display: none;
+}

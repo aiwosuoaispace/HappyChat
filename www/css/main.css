@@ -1,42 +1,87 @@
+body {
+  background-color: #E5EECC;
+}
+.main_header h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+.main_header span {
+  color: brown;
+  cursor: pointer;
+}
+.main_header span:hover {
+  color: #336666;
+  font-size: 18px;
+}
 .main_container {
-	width: 500px;
-	height: auto;
-	padding: 5px;
-	margin: 0 auto;
-	background-color: #ffffcc;
+  width: 600px;
+  height: auto;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #ffffcc;
 }
 #history_msg_content {
-    height: 500px;
-    background-color: white;
-    overflow: auto;
-    padding: 4px;
+  height: 500px;
+  background-color: white;
+  overflow: auto;
+  padding: 4px;
+  margin-top: 5px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid orange;
 }
 .controls {
-    height: auto;
-    margin: 10px 0px;
-    background-color: #dddddd;
-    position: relative;
-    
+  height: auto;
+  margin: 10px 0;
+  background-color: #dddddd;
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #19a15f;
 }
 #message_input {
-    width: 490px;
-    max-width: 490px;
-    height: 100px;
-    max-height: 100px;
+  width: 590px;
+  max-width: 590px;
+  height: 100px;
+  max-height: 100px;
 }
 #history_msg_content img {
-    max-width: 99%;
+  max-width: 99%;
 }
 #emoji_content {
-    display: none;
-    width: 400px;
-    height: auto;
-    bottom: 140px;
-    position: absolute;
-    background-color: white;
-    border: 1px solid black;
-
+  display: none;
+  width: 400px;
+  height: auto;
+  bottom: 140px;
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
 }
-#emoji_content img{
-	cursor: pointer;
+#emoji_content img {
+  cursor: pointer;
+}
+#video {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  z-index: 10;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid black;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -80%);
+  -ms-transform: translate(-50%, -80%);
+  transform: translate(-50%, -80%);
+  display: none;
 }

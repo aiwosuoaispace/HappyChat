@@ -6,6 +6,8 @@ $(function() {
 	sendFileBtn();
 	chat = new HiChat();
 	chat.init();
+	clearHistoryMsg();
+	videoStart();
 
 });
 
@@ -65,8 +67,8 @@ var HiChat = function() {
 	this.showEmoji = function(msg) {
 		var match;
 		var result = msg;
-		var	reg = /\[emoji:\d+\]/g;
-		var	emojiIndex;
+		var reg = /\[emoji:\d+\]/g;
+		var emojiIndex;
 		var totalEmojiNum = document.getElementById('emoji_content').children.length;
 		while(match = reg.exec(result)) {
 			emojiIndex = match[0].slice(7, -1);
@@ -152,5 +154,38 @@ function initEmoji() {
 		var messageInput = document.getElementById('message_input');
 		messageInput.focus();
 		messageInput.value = messageInput.value + '[emoji:' + target.title + ']';
+	});
+}
+//清空聊天记录
+function clearHistoryMsg() {
+	$("#clear_btn").click(function() {
+		$("#history_msg_content").empty();
+	});
+}
+//视频
+function videoStart() {
+	$("#video_btn").click(function() {
+		if($("#video").is(":hidden")) {
+			$("#video").show();
+			var getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+
+			getUserMedia.call(navigator, {
+				video: true,
+				audio: true
+			}, function(localMediaStream) {
+				var video = document.getElementById('video');
+				video.src = window.URL.createObjectURL(localMediaStream);
+				video.onloadedmetadata = function(e) {
+					console.log("Label: " + localMediaStream.label);
+					console.log("AudioTracks", localMediaStream.getAudioTracks());
+					console.log("VideoTracks", localMediaStream.getVideoTracks());
+				};
+			}, function(e) {
+				console.log('error', e);
+			});
+		} else {
+			$("#video").hide();
+		}
+
 	});
 }
